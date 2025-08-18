@@ -1,0 +1,155 @@
+
+ local library = loadstring(game:HttpGet("https://pastebin.com/raw/3vQbADjh", true))()
+----------------------------------------------------------------------------------------------------------------------------------------
+local window = library:new("Oliy hub")--V2
+----------------------------------------------------------------------------------------------------------------------------------------
+    local creds = window:Tab("关于", "6031097229")
+    local bin = creds:section("信息", true)
+    bin:Label("全缝合")    
+    bin:Label("Oliy制作")
+    bin:Label("帮助者：hfh916")
+    bin:Label("会学习怎么做脚本")
+    bin:Label("作者QQ：1622103455")
+    bin:Label("发布日期：2025年8月18号")
+    
+
+
+    local credits = creds:section("Ul设置", true)
+
+credits:Toggle("移除UI辉光", "", false, function(state)
+        if state then
+            game:GetService("CoreGui")["frosty is cute"].Main.DropShadowHolder.Visible = false
+        else
+            game:GetService("CoreGui")["frosty is cute"].Main.DropShadowHolder.Visible = true
+        end
+    end)
+
+    credits:Toggle("彩虹UI", "", false, function(state)
+        if state then
+            game:GetService("CoreGui")["frosty is cute"].Main.Style = "DropShadow"
+        else
+            game:GetService("CoreGui")["frosty is cute"].Main.Style = "Custom"
+        end
+    end)
+credits:Toggle("脚本框架变小一点", "", false, function(state)
+        if state then
+        game:GetService("CoreGui")["frosty"].Main.Style = "DropShadow"
+        else
+            game:GetService("CoreGui")["frosty"].Main.Style = "Custom"
+        end
+    end)
+    
+        credits:Button("摧毁GUI",function()
+            game:GetService("CoreGui")["frosty is cute"]:Destroy()
+        end)
+
+local creds = window:Tab("通用", "6035145364")
+    local credits = creds:section("通用内容", true)
+
+credit:Slider("步行速度!", "WalkSpeed", game.Players.LocalPlayer.Character.Humanoid.WalkSpeed, 16, 400, false, function(Speed)
+  spawn(function() while task.wait() do game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = Speed end end)
+end)
+
+credit:Slider("跳跃高度!", "JumpPower", game.Players.LocalPlayer.Character.Humanoid.JumpPower, 50, 400, false, function(Jump)
+  spawn(function() while task.wait() do game.Players.LocalPlayer.Character.Humanoid.JumpPower = Jump end end)
+end)
+
+credit:Textbox("重力设置!", "Gravity", "输入", function(Gravity)
+  spawn(function() while task.wait() do game.Workspace.Gravity = Gravity end end)
+end)
+
+credit:Toggle("夜视", "Light", false, function(Light)
+  spawn(function() while task.wait() do if Light then game.Lighting.Ambient = Color3.new(1, 1, 1) else game.Lighting.Ambient = Color3.new(0, 0, 0) end end end)
+end)
+
+credit:Button("透视", function()
+  local Players = game:GetService("Players"):GetChildren() local RunService = game:GetService("RunService") local highlight = Instance.new("Highlight") highlight.Name = "Highlight" for i, v in pairs(Players) do repeat wait() until v.Character if not v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then local highlightClone = highlight:Clone() highlightClone.Adornee = v.Character highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart") highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop highlightClone.Name = "Highlight" end end game.Players.PlayerAdded:Connect(function(player) repeat wait() until player.Character if not player.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then local highlightClone = highlight:Clone() highlightClone.Adornee = player.Character highlightClone.Parent = player.Character:FindFirstChild("HumanoidRootPart") highlightClone.Name = "Highlight" end end) game.Players.PlayerRemoving:Connect(function(playerRemoved) playerRemoved.Character:FindFirstChild("HumanoidRootPart").Highlight:Destroy() end) RunService.Heartbeat:Connect(function() for i, v in pairs(Players) do repeat wait() until v.Character if not v.Character:FindFirstChild("HumanoidRootPart"):FindFirstChild("Highlight") then local highlightClone = highlight:Clone() highlightClone.Adornee = v.Character highlightClone.Parent = v.Character:FindFirstChild("HumanoidRootPart") highlightClone.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop highlightClone.Name = "Highlight" task.wait() end end end)
+end)
+
+credit:Button("隐身道具", function()
+  loadstring(game:HttpGet("https://gist.githubusercontent.com/skid123skidlol/cd0d2dce51b3f20ad1aac941da06a1a1/raw/f58b98cce7d51e53ade94e7bb460e4f24fb7e0ff/%257BFE%257D%2520Invisible%2520Tool%2520(can%2520hold%2520tools)",true))()
+end)
+
+credit:Toggle("穿墙(可用)", "NoClip", false, function(NC)
+  local Workspace = game:GetService("Workspace") local Players = game:GetService("Players") if NC then Clipon = true else Clipon = false end Stepped = game:GetService("RunService").Stepped:Connect(function() if not Clipon == false then for a, b in pairs(Workspace:GetChildren()) do if b.Name == Players.LocalPlayer.Name then for i, v in pairs(Workspace[Players.LocalPlayer.Name]:GetChildren()) do if v:IsA("BasePart") then v.CanCollide = false end end end end else Stepped:Disconnect() end end)
+end)
+
+credit:Button("最强透视",function()
+  loadstring(game:HttpGet("https://pastebin.com/raw/uw2P2fbY"))()
+end)
+
+credit:Button("飞行v3",function()
+  loadstring(game:HttpGet'https://raw.githubusercontent.com/XNEOFF/FlyGuiV3/main/FlyGuiV3.txt')()
+end)
+
+credit:Button("甩人",function()
+  loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))()
+end)
+
+credit:Button("反挂机v2",function()
+  loadstring(game:HttpGet("https://pastebin.com/raw/9fFu43FF"))()
+end)
+
+credit:Button("铁拳",function()
+  loadstring(game:HttpGet('https://raw.githubusercontent.com/0Ben1/fe/main/obf_rf6iQURzu1fqrytcnLBAvW34C9N55kS9g9G3CKz086rC47M6632sEd4ZZYB0AYgV.lua.txt'))()
+end)
+
+credit:Button("键盘",function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/advxzivhsjjdhxhsidifvsh/mobkeyboard/main/main.txt"))()
+end)
+
+credit:Button("动画中心",function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/GamingScripter/Animation-Hub/main/Animation%20Gui", true))()
+end)
+
+credit:Button("立即死亡",function()
+  game.Players.LocalPlayer.Character.Humanoid.Health=0
+end)
+
+credit:Button("爬墙",function()
+  loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
+end)
+
+credit:Button("转起来",function()
+  loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+end)
+
+credit:Button("子弹追踪",function()
+  loadstring(game:HttpGet("https://pastebin.com/raw/1AJ69eRG"))()
+end)
+
+credit:Button("飞车",function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/63T0fkBm"))()
+end)
+
+credit:Button("吸人",function()
+    loadstring(game:HttpGet("https://shz.al/~HHAKS"))()
+end)
+
+credit:Button("无限跳跃",function()
+loadstring(game:HttpGet("https://pastebin.com/raw/V5PQy3y0", true))()
+end)
+
+credit:Toggle("人物显示", "RWXS", false, function(RWXS)
+    getgenv().enabled = RWXS getgenv().filluseteamcolor = true getgenv().outlineuseteamcolor = true getgenv().fillcolor = Color3.new(1, 0, 0) getgenv().outlinecolor = Color3.new(1, 1, 1) getgenv().filltrans = 0.5 getgenv().outlinetrans = 0.5 loadstring(game:HttpGet("https://raw.githubusercontent.com/Vcsk/RobloxScripts/main/Highlight-ESP.lua"))()
+end)
+
+credit:Button("死亡笔记", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/krlpl/dfhj/main/%E6%AD%BB%E4%BA%A1%E7%AC%94%E8%AE%B0.txt"))()
+end)
+
+local creds = window:Tab("其他脚本", "6035145364")
+    local credits = creds:section("其他脚本", true)
+
+credit:Button("叶脚本", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/roblox-ye/QQ515966991/refs/heads/main/ROBLOX-CNVIP-XIAOYE.lua"))()
+end)
+
+credit:Button("皮脚本", function()
+getgenv().XiaoPi="皮脚本QQ群1002100032" loadstring(game:HttpGet("https://raw.githubusercontent.com/xiaopi77/xiaopi77/main/QQ1002100032-Roblox-Pi-script.lua"))()
+end)
+
+credit:Button("卡卡脚本", function()
+QUN = "作者卡卡大帝"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/MIAN57/main/refs/heads/main/%E5%8D%A1%E5%8D%A12"))()
+end)
